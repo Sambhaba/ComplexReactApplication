@@ -23,4 +23,18 @@ after_success:
    - docker push sambhaba/multi-worker
    - docker push sambhaba/multi-nginx
 
+   deploy:
+    edge: true
+    provider: elasticbeanstalk
+    region: us-east-2
+    app: milti-docker
+    env: MultiDocker-env
+    bucket_name: elasticbeanstalk-us-east-2-141043694641
+    bucket_path:  docker-multi     
+    on:
+    branch: master
+    access_key_id: $AWS_ACCESS_KEY
+    secret_access_key: 
+            secure: $AWS_SECRET_KEY
+
         

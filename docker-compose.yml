@@ -28,7 +28,7 @@ services:
             - PGUSER=postgres
             - PGHOST=postgres
             - PGDATABASE=postgres
-            - PGPASSWORD=postgres_passowrd
+            - PGPASSWORD=postgres_password
             - PGPORT=5432
         depends_on:
                 - postgres

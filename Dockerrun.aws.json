@@ -1,0 +1,36 @@
+{
+    "AWSEBDockerrunVersion": 2,
+    "cointainerDefinitions": [
+        {
+            "name": "client",
+            "image": "sambhaba/multi-client",
+            "hostname": "client",
+            "essential": false
+        },
+        {
+            "name": "server",
+            "image": "sambhaba/multi-server",
+            "hostname": "api",
+            "essential": false
+        },
+        {
+            "name": "worker",
+            "image": "sambhaba/multi-worker",
+            "hostname": "worker",
+            "essential": false
+        },
+        {
+            "name": "nginx",
+            "image": "sambhaba/multi-nginx",
+            "hostname": "nginx",
+            "essential": true,
+            "portMappings": [
+                {
+                    "hostPort": 80,
+                    "cointainerport": 80
+                }
+            ],
+            "links": ["client","server"]
+        }
+    ]
+}
