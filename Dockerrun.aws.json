@@ -1,6 +1,6 @@
 {
     "AWSEBDockerrunVersion": 2,
-    "cointainerDefinitions": [
+    "containerDefinitions": [
         {
             "name": "client",
             "image": "sambhaba/multi-client",
@@ -30,7 +30,7 @@
             "portMappings": [
                 {
                     "hostPort": 80,
-                    "cointainerport": 80
+                    "containerport": 80
                 }
             ],
             "links": ["client","server"],
